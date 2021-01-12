@@ -12,6 +12,7 @@
 */
 
 use App\Mail\NewUserWelcomeMail;
+use App\Http\Controllers\HomeController;
 
 Auth::routes();
 
@@ -20,6 +21,8 @@ Route::get('/email', function () {
 });
 
 Route::post('follow/{user}', 'FollowsController@store');
+
+Route::get('/home', 'HomeController@index');
 
 Route::get('/', 'PostsController@index');
 Route::get('/p/create', 'PostsController@create');
